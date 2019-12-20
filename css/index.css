@@ -1,0 +1,446 @@
+/* Affects entire document */
+html {
+    scroll-behavior: smooth; /* This ensures that the page scrolling is smooth when the nav bar is clicked */
+  }
+
+/* Body */
+body {
+    margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: Optima, sans-serif;
+    font-size: 1.5vw;
+}
+
+/* This section contributes to the fade effect for the page that occurs when the page is loaded */
+body.fade-out {
+    opacity: .1;
+    transition: none;
+}
+
+
+/* Navrbar */
+.navbar {
+    overflow: hidden;
+    background-color: slategrey;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    -webkit-animation: moveNav 5s; /* Safari 4.0 - 8.0 */
+    animation: moveNav 5s;
+}
+
+/* Navbar text */
+.navbar a {
+    float: left;
+    display: block;
+    color: ivory;
+    padding: .75vw 1vw;
+    text-decoration: none;
+    font-family: Optima, sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+    position: relative;
+    -webkit-animation: moveavText 5.75s;
+    animation: movenavText 5.75s;
+    letter-spacing: .2vw;
+}
+
+/* The animation effect for moving the nav bar in from above the top of the screen upon page load */
+@keyframes moveNav {
+    from {left: -100vw;}
+    to {left: 0vw;}
+  }
+  
+  /* The animation effect for moving the nav bar in from above the top of the screen upon page load */
+  @keyframes movenavText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+  }
+  
+  
+  /* This animation effect causes the overlay video text to move up from the bottom of the page upon page load */
+  @keyframes movevideoText {
+    from {top: -100vw;}
+    to {top: 0px;}
+  }
+
+/* Navbar hover effect */
+.navbar a:hover {
+    background-color: mintcream;
+    color: slategrey;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+}
+
+/* Navbar home button */
+.navbar a.active {
+    background-color: silver;
+}
+
+/* This causes the video to zoom out from a zoomed in position upon page load */
+@keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(1.5,1.5);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+/* Video */
+#coding_video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+    animation: zoominoutsinglefeatured 5s;
+}
+
+/* Text over the video */
+.video_text {
+    background: rgba(0,0,0,0.5);
+    color: peachpuff;
+    width: 100%;
+    padding-top: .1vh;
+    padding-bottom: 1vh;
+    margin-top: 23%;
+    position:relative;
+    -webkit-animation: moveNav 4s; /* Safari 4.0 - 8.0 */
+    animation: movevideoText 4s;
+}
+
+/* slideshow styling */
+#slideshow_background {
+    background: rgba(255,255,255,0.35);
+}
+
+.mySlides {
+    display: none;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* slideshow section / container */
+#slideshow_container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+/* images container within slideshow */
+.slide_show_images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0,0,0,.75);
+    width: auto;
+}
+
+/* next and previous buttons */
+.previous, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    margin-top: -0vw;
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.previous:hover, .next:hover {
+    background-color: rgba(0,0,0,.8);
+    color: mintcream;
+}
+
+.text {
+    color: peachpuff;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center; 
+    font-family: Marker Felt;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0,0,0,.75);
+    font-weight: bold;
+    border-radius: 7px 7px 7px 7px;
+}
+
+.slide_number {
+    color: peachpuff;
+    position: absolute;
+    top: 0;
+    font-family: Marker Felt;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    display: none;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: mintcream;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.active, .dot:hover {
+    background-color: black;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s; 
+}
+
+/* Table */
+* {
+    box-sizing: border-box;
+}
+
+.column_1 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 448px;
+    background-color: aliceblue;
+}
+
+.column_2 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    padding-top: 1.9%;
+    height: 448px;
+    background-color: slategrey;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Heading 1 elements */
+h1 {
+    text-transform: uppercase;
+    font-family: "Trebchet MS", Optima;
+    text-align: center;
+    margin-top: 3%;
+    color: black
+}
+
+/* paragraph elements */
+p {
+    font-family: Marker Felt;
+    text-align: justify;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+/* Center align elements */
+center {
+    font-family: Marker Felt;
+    text-align: center;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+/* Anchor elements */
+a {
+    color: blue;
+}
+
+/* quotation elements */
+q {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Image elements */
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%;
+    height: 100%;
+    margin: auto auto auto auto;
+    display: block;
+}
+
+/* Contact Form */
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: Marker Felt;
+}
+
+/* Center align element hover effect */
+center:hover {
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
+/* Paragraph element howver effect */
+p:hover {
+    color: #00004d;
+    transition: transform 1s;
+    transform: scale(1.01)
+}
+
+/* Heading 1 element hover effect */
+h1:hover {
+    color: black;
+    font-weight: normal;
+}
+
+/* Image element hover effects */
+img:hover {
+    filter: grayscale(5%);
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
+/* Contact form styling */
+
+/* Makes contact form button slide in from right on page load */
+@keyframes movePopup {
+  from {right: -40vw;}
+  to {bottom: 1.75vw;}
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.Pop_Up_Button {
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: aliceblue;
+    color: black;
+    border: solid;
+    cursor: pointer;
+    position: fixed;
+    -webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    border: 3px solid mintcream;
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: 6px;
+    right: 6px;
+}
+
+.form-container {
+    max-width: 49vw;
+    padding: 9px;
+    background-color: mintcream;
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;
+    border: none; 
+    background: aliceblue;
+    font-family: "Trebchet MS", Optima;
+    font-size: 1vw;
+}
+
+/* Submit button */
+.form-container .btn {
+    background-color: mintcream;
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh;
+}
+
+/* Close button */
+.form-container .cancel {
+    background-color: black;
+    color: white;
+    border-color: grey;
+}
+
+/* Button styling */
+button {
+    font-family: "Trebuchet MS", Optima; 
+    letter-spacing: .3vw; 
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw 1.5vw;
+    border-style: solid;
+    cursor: pointer;
+    width: 100%;
+    height: auto;  
+}
+
+/* Hover effect for buttons */
+button:hover, .form-container .btn:hover{
+    color: white;
+    background-color: black;
+    -webkit-transition-duration: 1s; 
+    transition-duration: 1s;
+    border-style: solid;
+    border-color: silver;
+  }
+.form-container .cancel:hover{
+    color: white;
+    background-color: darkred;
+    -webkit-transition-duration: 1s; 
+    transition-duration: 1s;
+    border-style: solid;
+    border-color: black;
+}	
+
+/* Footer element */
+footer {
+    padding: 2%;
+    background-color: white;
+}
